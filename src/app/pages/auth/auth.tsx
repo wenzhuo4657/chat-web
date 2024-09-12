@@ -18,12 +18,12 @@ export function Auth() {
                 style={{ width: 250 }}
             />
             <div className={styles["auth-tips"]}>
-                扫码关注公众号【AutoStudy】，
+                扫码关注公众号【忧伤小屋】，
                 <a
                     href="/qrcode.jpg"
                     target="_blank"
                 >
-                    回复【403】获取访问密码
+                    回复【验证码】获取访问密码
                 </a>
             </div>
 
@@ -46,7 +46,6 @@ export function Auth() {
                 <Button type="text">稍后再说</Button>
             </div>
             <span>
-        说明：此平台主要以学习OpenAI为主，请合理、合法、合规的使用相关资料！
       </span>
         </div>
     );
