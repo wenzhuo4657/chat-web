@@ -6,7 +6,7 @@ import {getServerSideConfig} from "@/app/config/server";
 // 构建前把localhost修改为你的公网IP或者域名地址
 // const {apiHostUrl} = getServerSideConfig();
 
-const apiHostUrl = "http://localhost:8081";
+const apiHostUrl = process.env.NEXT_PUBLIC_API_HOST_URL;
 
 /**
  * Header 信息
