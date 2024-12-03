@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@hello-pangea/dnd": "^16.2.0",
+    "@lucky-canvas/react": "^0.1.13",
     "@svgr/webpack": "^6.5.1",
     "@types/node": "20.2.5",
     "@types/react": "18.2.7",

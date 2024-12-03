@@ -2,11 +2,10 @@ import styles from "./sidebar.module.scss";
 
 import ChatGPTIcon from "../../icons/chatgpt.svg";
 import ChatIcon from "../../icons/chat.svg";
-import RoleIcon from "../../icons/role.svg";
 import MaxIcon from "../../icons/max.svg";
 import MinIcon from "../../icons/min.svg";
 import ExitIcon from "../../icons/exit.svg";
-
+import MarketIcon from "../../icons/market.svg";
 import {useNavigate} from "react-router-dom";
 import {Path} from "@/app/constants";
 import {IconButton} from "@/app/components/button/button";
@@ -45,13 +44,13 @@ export function SideBar() {
                  }}>
                 <ChatIcon/>
             </div>
-
-            <div className={styles["sidebar-role"]}
+            <div className={styles["sidebar-mall"]}
                  onClick={() => {
-                     navigate(Path.Role)
+                     navigate(Path.Market)
                  }}>
-                <RoleIcon/>
+                <MarketIcon/>
             </div>
+
 
         </div>
     )
