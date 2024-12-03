@@ -1,0 +1,5 @@
+docker run -d \
+-p 3000:3000 \
+-v ~/chatweb/app/.env:/app/.env
+--name chatweb \
+jacka7732/chatweb:1.2.2
