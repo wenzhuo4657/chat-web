@@ -1,8 +1,6 @@
 # 使用 Node.js 16 Alpine 作为基础镜像
 FROM node:16-alpine as build
 
-ENV NEXT_PUBLIC_API_HOST_URL="http://101.42.176.102:8081"
-
 # 设置工作目录
 WORKDIR /app
 

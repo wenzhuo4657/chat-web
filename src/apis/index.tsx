@@ -3,11 +3,10 @@ import {useAccessStore} from "@/app/store/access";
 import {MessageRole} from "@/types/chat";
 import {getServerSideConfig} from "@/app/config/server";
 
-// 构建前把localhost修改为你的公网IP或者域名地址
-// const {apiHostUrl} = getServerSideConfig();
+
 
 const apiHostUrl = process.env.NEXT_PUBLIC_API_HOST_URL;
-const bigMarketApiHostUrl=process.env.bigMarketApiHostUrl;
+const bigMarketApiHostUrl=process.env.NEXT_PUBLIC_BigMarket_ApiHostUrl;
 
 /**
  * Header 信息
