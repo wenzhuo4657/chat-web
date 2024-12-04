@@ -1,5 +1,6 @@
 docker run -d \
 -p 3000:3000 \
--v ~/chatweb/app/.env:/app/.env
+-v ~/chatweb/app/.env:/app/.env   \
 --name chatweb \
-jacka7732/chatweb:1.2.2
+--entrypoint /bin/sh jacka7732/chatweb:1.2.2 -c "npm run build && npm start"
+# 覆盖镜像cmd命令，用于更改默认配置时重新构建项目，且注意，默认配置均将其发送到本机的80端口，通过nginx等服务器进行转发请求

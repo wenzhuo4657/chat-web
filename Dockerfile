@@ -28,4 +28,4 @@ COPY --from=build /app ./
 EXPOSE 3001
 
 # 启动应用程序
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm run build && npm run start"]
