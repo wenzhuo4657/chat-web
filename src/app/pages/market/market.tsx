@@ -29,8 +29,8 @@ export function Market() {
                 </div>
             </div>
 
-            {/* 商品 */}
-            <SkuProductButton handleRefresh={handleRefresh}/>
+            {/*/!* 商品 *!/*/}
+            {/*<SkuProductButton handleRefresh={handleRefresh}/>*/}
 
         </div>
     );

@@ -14,7 +14,7 @@ import { useAccessStore } from "@/app/store/access";
 const Chat = dynamic(async () => (await import("../chat/chat")).Chat);
 const Auth = dynamic(async () => (await import("../auth/auth")).Auth);
 const Market = dynamic(async () => (await import("../market/market")).Market);
-
+const Sale = dynamic(async () => (await import("../sale/sale")).Sale);
 function Screen() {
     const config = useAppConfig();
     const access = useAccessStore();
@@ -36,12 +36,16 @@ function Screen() {
 
                     {/* 路由地址 */}
                     <div className={styles["window-content"]}>
+                        <div className={styles["right-top-link"]}>
+                            <a href="/about.html">发布</a>
+                        </div>
                         <Routes>
-                            <Route path={Path.Home} element={<Chat />} />
-                            <Route path={Path.Chat} element={<Chat />}>
-                                <Route path=":id" element={<DialogMessage />} />
+                            <Route path={Path.Home} element={<Chat/>}/>
+                            <Route path={Path.Chat} element={<Chat/>}>
+                                <Route path=":id" element={<DialogMessage/>}/>
                             </Route>
                             <Route path={Path.Market} element={<Market/>}/>
+                            <Route path={Path.Sale} element={<Sale/>}/>
                         </Routes>
                     </div>
                 </>
@@ -53,7 +57,7 @@ function Screen() {
 export function Home() {
     return (
         <Router>
-            <Screen />
+            <Screen/>
         </Router>
     );
 }

@@ -1,4 +1,4 @@
-export interface Sale_product {
+export interface SaleProduct {
     productId: number,
     productName: string,
     productDesc: string,

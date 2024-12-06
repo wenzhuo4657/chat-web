@@ -28,7 +28,7 @@ export const useAccessStore: any = create<AccessControlStore>()(
             isAuthorized() {
                 return !!get().token;
             },
-            goToLogin() {
+            goToLogin() {   //清除登录状态
                 get().updateCode("");
                 get().updateToken("");
             },

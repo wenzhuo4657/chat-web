@@ -2,6 +2,7 @@ import {GptVersion} from "@/app/constants";
 import {useAccessStore} from "@/app/store/access";
 import {MessageRole} from "@/types/chat";
 import {getServerSideConfig} from "@/app/config/server";
+import internal from "node:stream";
 
 
 
@@ -21,6 +22,42 @@ function getHeaders() {
 
     return headers
 }
+
+
+
+/**
+ * 查询openAi产品信息
+* */
+export const queryProductList = () => {
+    return fetch('http://localhost:8081/api/v1/sale/query_product_list', {
+        method: 'GET',
+        headers: getHeaders(),
+    });
+};
+
+
+
+/**
+ * 购买商品
+ *
+ * */
+// TODO 暂时没有实现，
+export const createPayOrder = (productId:Number ) => {
+
+    return {
+        "userId": "12345",
+        "username": "john_doe",
+        "email": "john.doe@example.com",
+        "fullName": {
+            "firstName": "John",
+            "lastName": "Doe"
+        }
+    }
+    // fetch(`${apiHostUrl}/api/v1//sale/query_product_list`, {
+    //     method: 'get',
+    //     headers: getHeaders(),
+    // });
+};
 
 
 
