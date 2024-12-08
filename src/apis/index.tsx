@@ -29,7 +29,7 @@ function getHeaders() {
  * 查询openAi产品信息
 * */
 export const queryProductList = () => {
-    return fetch('http://localhost:8081/api/v1/sale/query_product_list', {
+    return fetch(`${apiHostUrl}/api/v1/sale/query_product_list`, {
         method: 'GET',
         headers: getHeaders(),
     });
@@ -40,7 +40,7 @@ export const queryProductList = () => {
  * 购买openAi产品
  * */
 export const sale_product = (productId:Number ) => {
-    return fetch('http://localhost:8081/api/v1/sale/sale_product?productId='+productId, {
+    return fetch(`${apiHostUrl}/api/v1/sale/sale_product?productId=`+productId, {
         method: 'POST',
         headers: getHeaders(),
     });
