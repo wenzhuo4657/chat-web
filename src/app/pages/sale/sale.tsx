@@ -1,6 +1,6 @@
 import styles from './sale.module.scss';
 import QRCode from 'qrcode.react';
-import {queryProductList,createPayOrder} from "@/apis";
+import {createPayOrder, queryProductList, sale_product} from "@/apis";
 import {useEffect, useState} from "react";
 import {SaleProduct, SaleProductEnum} from "@/types/sale_product";
 import {useAccessStore} from "@/app/store/access";
@@ -34,17 +34,13 @@ export function Sale() {
     }
 
     const payOrder = async (productId: number) => {
-        // const res = await createPayOrder(productId);
-        // const {data, code} = await res.json();
-        // // 登录拦截
-        // if (code === SaleProductEnum.NeedLogin) {
-        //     useAccessStore.getState().goToLogin();
-        // }
-        // // 支付唤起
-        // if (code == SaleProductEnum.SUCCESS) {
-        //     setPayUrl(data);
-        //     handleButtonClick();
-        // }
+        console.log(productId)
+        const res = await sale_product(productId);
+        const {data, code} = await res.json();
+        // 登录拦截
+        if (code === SaleProductEnum.NeedLogin) {
+            useAccessStore.getState().goToLogin();
+        }
     }
 
     useEffect(() => {

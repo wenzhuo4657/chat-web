@@ -506,19 +506,19 @@
                         <ul class="speedlist">
                             <li>
                                 <label>
-                                    <input type="radio" name="exchangeOption" value="200" >
+                                    <input type="radio" name="exchangeOption" value="0.1" >
                                     200￥=10rbm
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="radio" name="exchangeOption" value="500" >
+                                    <input type="radio" name="exchangeOption" value="0.1" >
                                     500￥=20rbm
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="radio" name="exchangeOption" value="100" >
+                                    <input type="radio" name="exchangeOption" value="0.1" >
                                     100￥=6rbm
                                 </label>
                             </li>
@@ -541,24 +541,36 @@
         if (selectedOption) {
             const value = selectedOption.value;
 
-            // 在这里你可以处理 value 和 url，例如发送 AJAX 请求
-            console.log('Selected Value:', value);
 
-            // 示例：使用 fetch 发送 POST 请求
+            console.log('Selected Value:', value);
+            const price = value;
+            const payType = 1;
+            const url = `http://localhost:8081/api/v1/order/create?price=${encodeURIComponent(price)}&payType=${encodeURIComponent(payType)}`;
             fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ value: value }),
+                method: "GET"
             })
                 .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
+                .then(result => {
+                    window.location = result.msg;
                 })
-                .catch((error) => {
-                    console.error('Error:', error);
+                .catch(error => {
+                    console.error("Error:", error);
                 });
+            // // 示例：使用 fetch 发送 POST 请求
+            // fetch(url, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({ value: value }),
+            // })
+            //     .then(response => response.json())
+            //     .then(data => {
+            //         console.log('Success:', data);
+            //     })
+            //     .catch((error) => {
+            //         console.error('Error:', error);
+            //     });
         } else {
             alert('未选择兑换选项');
         }

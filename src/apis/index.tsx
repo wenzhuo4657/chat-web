@@ -36,6 +36,17 @@ export const queryProductList = () => {
 };
 
 
+/**
+ * 购买openAi产品
+ * */
+export const sale_product = (productId:Number ) => {
+    return fetch('http://localhost:8081/api/v1/sale/sale_product?productId='+productId, {
+        method: 'POST',
+        headers: getHeaders(),
+    });
+};
+
+
 
 /**
  * 购买商品
